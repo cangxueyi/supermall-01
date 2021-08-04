@@ -27,6 +27,7 @@
 		methods:{
 			currentClick(index){
 				this.currentIndex=index
+				this.$emit('listClick',index)
 			}
 		}
 	}
