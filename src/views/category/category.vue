@@ -1,67 +1,50 @@
 <template>
-	<div class="wrapper" ref="wrapper">
-		  <ul class="content">
-			  <li>列表123</li>
-			  <li>列表123</li>
-			  <li>列表123</li>
-			  <li>列表123</li>
-			  <li>列表123</li>
-			  <li>列表123</li>
-			  <li>列表123</li>
-			  <li>列表123</li>
-			  <li>列表123</li>
-			  <li>列表123</li>
-			  <li>列表123</li>
-			  <li>列表123</li>
-			  <li>列表123</li>
-			  <li>列表123</li>
-			  <li>列表123</li>
-			  <li>列表123</li>
-			  <li>列表123</li>
-			  <li>列表123</li>
-			  <li>列表123</li>
-			  <li>列表123</li>
-			  <li>列表123</li>
-			  <li>列表123</li>
-			  <li>列表123</li>
-			  <li>列表123</li>
-			  <li>列表123</li>
-			  <li>列表123</li>
-			  <li>列表123</li>
-			  <li>列表123</li>
-			  <li>列表123</li>
-			  <li>列表123</li>
-			  <li>列表123</li>
-			  <li>列表123</li>
-			  <li>列表123</li>
-			  <li>列表123</li>
-			  <li>列表123</li>
-			  <li>列表123</li>
-			  <li>列表123</li>
-			  <li>列表123</li>
-			  <li>列表123</li>
-			  <li>列表123</li>
-			  <li>列表123</li>
-			  <li>列表123</li>
-			  <li>列表123</li>
-			  <li>列表123</li>
-			  <li>列表123</li>
-			  <li>列表123</li>
-			  <li>列表123</li>
-			  <li>列表123</li>
-			  <li>列表123</li>
-			  <li>列表123</li>
-			  <li>列表123</li>
-			  <li>列表123</li>
-			  <li>列表123</li>
-			  <li>列表123</li>
-			  <li>列表123</li>
-			  <li>列表123</li>
-			  <li>列表123</li>
-			  <li>列表123</li>
-			  <li>列表123</li>
-			  <li>列表123</li>
-		  </ul>
+	<div>
+		<h2>分类</h2>
+		<div class="wrapper" ref="wrapper">
+			<ul>
+				<li>列表￥</li>
+				<li>列表￥</li>
+				<li>列表￥</li>
+				<li>列表￥</li>
+				<li>列表￥</li>
+				<li>列表￥</li>
+				<li>列表￥</li>
+				<li>列表￥</li>
+				<li>列表￥</li>
+				<li>列表￥</li>
+				<li>列表￥</li>
+				<li>列表￥</li>
+				<li>列表￥</li>
+				<li>列表￥</li>
+				<li>列表￥</li>
+				<li>列表￥</li>
+				<li>列表￥</li>
+				<li>列表￥</li>
+				<li>列表￥</li>
+				<li>列表￥</li>
+				<li>列表￥</li>
+				<li>列表￥</li>
+				<li>列表￥</li>
+				<li>列表￥</li>
+				<li>列表￥</li>
+				<li>列表￥</li>
+				<li>列表￥</li>
+				<li>列表￥</li>
+				<li>列表￥</li>
+				<li>列表￥</li>
+				<li>列表￥</li>
+				<li>列表￥</li>
+				<li>列表￥</li>
+				<li>列表￥</li>
+				<li>列表￥</li>
+				<li>列表￥</li>
+				<li>列表￥</li>
+				<li>列表￥</li>
+				<li>列表￥</li>
+				<li>列表￥</li>
+			</ul>
+		</div>
 	</div>
 </template>
 
@@ -76,16 +59,30 @@
 		},
 		mounted() {
 			this.$nextTick(()=>{
-				this.scroll = new BScroll(this.$refs.wrapper,{})
+				this.scroll = new BScroll(this.$refs.wrapper,{
+					probeType:3,
+					pullUpLoad:true
+				})
 			})
+			// this.scroll.on('scroll',(position)=>{
+			// 	console.log(position)
+			// })
+			// this.scroll.on('pullUpLoad',()=>{
+			// 	console.log('上拉加载更多')
+			// })
+		},
+		methods:{
+			btnClick(){
+				console.log('点击次数加一')
+			}
 		}
 	}
 </script>
 
 <style>
-/* 	.wrapper{
+	.wrapper{
 		background-color: greenyellow;
 		height: 200px;
 		overflow: hidden;
-	} */
+	}
 </style>
