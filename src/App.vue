@@ -5,7 +5,9 @@
 		</keep-alive>
 		<main-tabbar></main-tabbar>
 		
+		
 		<button>点击</button>
+		<a>我是张三</a>
 	</div>
 </template>
 
