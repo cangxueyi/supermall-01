@@ -8,6 +8,7 @@
 		
 		<button>点击</button>
 		<a>我是张三</a>
+		<button>我是按钮</button>
 		
 		<button>不要点</button>
 	</div>
