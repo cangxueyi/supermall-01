@@ -4,6 +4,8 @@
 			<router-view></router-view>
 		</keep-alive>
 		<main-tabbar></main-tabbar>
+		
+		<a>我是张三</a>
 	</div>
 </template>
 
