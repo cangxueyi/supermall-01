@@ -6,6 +6,7 @@
 		<main-tabbar></main-tabbar>
 		
 		<button>点击</button>
+		<p>张三李四王五</p>
 	</div>
 </template>
 
