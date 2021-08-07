@@ -8,6 +8,8 @@
 		
 		<button>点击</button>
 		<a>我是张三</a>
+		
+		<button>不要点</button>
 	</div>
 </template>
 
