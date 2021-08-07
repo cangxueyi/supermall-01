@@ -4,6 +4,8 @@
 			<router-view></router-view>
 		</keep-alive>
 		<main-tabbar></main-tabbar>
+		
+		<button>点击</button>
 	</div>
 </template>
 
