@@ -1,6 +1,6 @@
 <template>
 	<div id="home">
-		<nav-bar class="home-bar"><div slot="center">购物街</div></nav-bar>
+		<nav-bar class="home-bar"><div slot="center" class="title">购物街</div></nav-bar>
 		<home-swiper :banners="banners"></home-swiper>
 		<recommend-view :recommends="recommends"></recommend-view>
 		<feature-view />
@@ -9,7 +9,7 @@
 		@listClick="listClick(index)"></tab-control>
 		<!-- <good-list :good="showGood"></good-list> -->
 		
-		<ul>
+		<ul @click="ulClick">
 			<li>列表</li>
 			<li>列表</li>
 			<li>列表</li>
@@ -70,6 +70,47 @@
 			<li>标签</li>
 			<li>标签</li>
 			<li>标签</li>
+			<li>列表</li>
+			<li>列表</li>
+			<li>列表</li>
+			<li>列表</li>
+			<li>列表</li>
+			<li>列表</li>
+			<li>列表</li>
+			<li>列表</li>
+			<li>列表</li>
+			<li>列表</li>
+			<li>列表</li>
+			<li>列表</li>
+			<li>列表</li>
+			<li>列表</li>
+			<li>列表</li>
+			<li>列表</li>
+			<li>列表</li>
+			<li>列表</li>
+			<li>列表</li>
+			<li>列表</li>
+			<li>列表</li>
+			<li>列表</li>
+			<li>列表</li>
+			<li>列表</li>
+			<li>列表</li>
+			<li>列表</li>
+			<li>列表</li>
+			<li>列表</li>
+			<li>列表</li>
+			<li>列表</li>
+			<li>列表</li>
+			<li>列表</li>
+			<li>列表</li>
+			<li>列表</li>
+			<li>列表</li>
+			<li>列表</li>
+			<li>列表</li>
+			<li>列表</li>
+			<li>列表</li>
+			<li>列表</li>
+			<li>列表</li>
 		</ul>
 	</div>
 </template>
@@ -106,6 +147,7 @@
 					'sell':{page:0,list:[]}
 				},
 				// currentType:'pop'
+				saveY:0
 			}
 		},
 		// computed:{
@@ -121,6 +163,13 @@
 			// this.getHomeGood('new')
 			// this.getHomeGood('sell')
 		},
+		// activated() {
+		// 	this.$refs.scroll.scrollTo(0,this.saveY,0)
+		// 	this.$refs.scroll.refresh()
+		// },
+		// deactivated() {
+		// 	this.saveY = this.$refs.scroll.getScrollY()
+		// },
 		methods:{ 
 			/*
 				事件监听相关方法
@@ -159,6 +208,9 @@
 	// 				this.good[type].page+1 //页面数加一
 	// 			})
 	// 		}
+			ulClick(){
+				this.$router.push('/detail')
+			}
 		}
 	}
 </script>
@@ -166,6 +218,9 @@
 <style>
 	#home{
 		padding-top:44px;
+	}
+	.title{
+		margin-top: 12px;
 	}
 	.home-bar{
 		position:fixed;
