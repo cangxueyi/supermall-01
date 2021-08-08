@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<swiper ref="wrapper">
+		<swiper class="home-swiper" ref="wrapper">
 			<swiper-item v-for="item in banners">
 				<a :href="item.link">
 					<img :src="item.image" />

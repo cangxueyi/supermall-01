@@ -9,6 +9,7 @@
 		@listClick="listClick(index)"></tab-control>
 		<!-- <good-list :good="showGood"></good-list> -->
 		
+		<back-top />
 		<ul @click="ulClick">
 			<li>列表</li>
 			<li>列表</li>
@@ -123,6 +124,7 @@
 	import NavBar from 'components/common/navbar/NavBar.vue'
 	import TabControl from 'components/content/TabControl/TabControl.vue'
 	import GoodList from 'components/content/goodList/GoodList.vue'
+	import BackTop from 'components/content/backTop/BackTop.vue'
 	
 	import {getHomeMultidata,getHomeGood} from 'network/home.js'
 	
@@ -134,7 +136,8 @@
 			FeatureView,
 			NavBar,
 			TabControl,
-			GoodList
+			GoodList,
+			BackTop
 		},
 		data(){
 			return{
@@ -163,13 +166,14 @@
 			// this.getHomeGood('new')
 			// this.getHomeGood('sell')
 		},
-		// activated() {
-		// 	this.$refs.scroll.scrollTo(0,this.saveY,0)
-		// 	this.$refs.scroll.refresh()
-		// },
-		// deactivated() {
-		// 	this.saveY = this.$refs.scroll.getScrollY()
-		// },
+		activated() {
+			console.log(this.saveY)
+			// this.$refs.scroll.scrollTo(0,this.saveY,0)
+			// this.$refs.scroll.refresh()
+		},
+		deactivated() {
+			// this.saveY = this.$refs.scroll.getCurrentY()
+		},
 		methods:{ 
 			/*
 				事件监听相关方法
