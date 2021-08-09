@@ -1,6 +1,6 @@
 <template>
 	<div class="goodlistitem">
-		<img :src="gooditem.show.img" />
+		<img :src="showImage" />
 		<div>
 			<p>{{gooditem.title}}</p>
 			<span class="price">{{gooditem.price}}</span>
@@ -18,6 +18,24 @@
 				default(){
 					return{}
 				}
+			}
+		},
+		computed:{
+			showImage(){
+				return this.gooditem.show.img || this.gooditem.image
+			}
+		},
+		methods:{
+			imgLoad(){
+				this.$bus.$emit('itemImgLoad')
+			},
+			itemClick(){
+				this.$router.push({
+					path:'/detail',
+					query:{
+						text:this.gooditem.text
+					}
+				})
 			}
 		}
 	}
