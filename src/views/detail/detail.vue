@@ -1,12 +1,91 @@
 <template>
 	<div name="detail">
-		<detail-nav-bar></detail-nav-bar>
-		<detail-swiper></detail-swiper>
+		<detail-nav-bar/>
+		<detail-swiper/>
 		<p>商品详细信息</p>
-		<detail-image-info></detail-image-info>
-		<detail-params-info :params-item="paramInfo"></detail-params-info>
-		<detail-comment-info></detail-comment-info>
-		<good-list :good="recommends"></good-list>
+		<detail-image-info />
+		<!-- 绑定子组件所传信息@detailImageLoad="detailImgLoad" -->
+		<detail-params-info />
+		<!-- 绑定参数信息:params-item="paramInfo" -->
+		<detail-comment-info/>
+		<detail-bottom-bar/>
+		<good-list />
+		<!-- 绑定商品信息:good="recommends" -->
+		
+		<ul>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>标签</li>
+				<li>标签</li>
+				<li>标签</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+				<li>列表</li>
+			</ul>
+		
 	</div>
 </template>
 
@@ -18,6 +97,7 @@
 	import DetailImageInfo from './childComp/detailImageInfo.vue'
 	import DetailParamsInfo from './childComp/detailParamsInfo.vue'
 	import DetailCommentInfo from './childComp/dateilCommentInfo.vue'
+	import DetailBottomBar from './childComp/detailBottomBar.vue'
 	
 	import GoodList from 'components/content/goodList/GoodList.vue'
 	
@@ -29,6 +109,7 @@
 			DetailImageInfo,
 			DetailParamsInfo,
 			DetailCommentInfo,
+			DetailBottomBar,
 			GoodList
 		},
 		data() {
@@ -39,7 +120,7 @@
 				shopInfo:{},
 				detailInfo:{},
 				itemParams:{},
-				commentInfo{}
+				commentInfo:{}
 			}
 		},
 		created() {
@@ -64,6 +145,12 @@
 			// 		this.commentInfo = data.rate.list[0]
 			// 	}
 			// })
+		},
+		methods:{
+			detailImageLoad(){
+				// 最好做一个防抖动操作，避免多次发射请求
+				this.$refs.scroll.refresh()
+			}
 		}
 	}
 </script>
