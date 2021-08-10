@@ -12,7 +12,7 @@
 			<!-- 绑定key -->
 			<div class=""></div>
 			<!-- 遍历图片 -->
-			<div class="">
+			<div class="" @click="detailClick">
 				<img src="" />
 			</div>
 		</div>
@@ -29,6 +29,11 @@
 				default(){
 					return{}
 				}
+			}
+		},
+		methods:{
+			detailClick(){
+				this.$emit('detailImgLoad')
 			}
 		}
 	}

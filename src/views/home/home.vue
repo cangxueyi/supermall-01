@@ -1,12 +1,16 @@
 <template>
 	<div id="home">
 		<nav-bar class="home-bar"><div slot="center" class="title">购物街</div></nav-bar>
-		<home-swiper :banners="banners"></home-swiper>
-		<recommend-view :recommends="recommends"></recommend-view>
-		<feature-view />
 		<tab-control class="tab-control" 
 		:titles="['流行','新款','精选']" 
-		@listClick="listClick(index)"></tab-control>
+		@listClick="listClick(index)" 
+		ref="topControl" />
+		<home-swiper :banners="banners"/>
+		<recommend-view :recommends="recommends"/>
+		<feature-view />
+		<tab-control :titles="['流行','新款','精选']" 
+		@listClick="listClick(index)"  
+		ref="topTabControl"/>
 		<!-- <good-list :good="showGood"></good-list> -->
 		
 		<back-top />
@@ -175,9 +179,9 @@
 			// this.saveY = this.$refs.scroll.getCurrentY()
 		},
 		methods:{ 
-			/*
-				事件监听相关方法
-			*/
+	/*
+		事件监听相关方法
+	*/
 			// listClick(index){
 			// 	switch(index){
 			// 		case 0:
@@ -190,11 +194,15 @@
 			// 			this.currentType = 'sell'
 			// 			break
 			// 	}
+			//  this.showGood = this.good[this.currentIndex].list
+			// 让两个tabcontrol状态保持一致
+			//  this.$refs.topTabControl.currentIndex = index;
+			//  this.$refs.topControl.currentIndex = index;
 			// },
 			
-			/* 
-				网络请求相关方法
-			*/
+	/* 
+		网络请求相关方法
+	*/
 			//做封装，简化生命周期函数
 			getHomeMultidata(){
 				getHomeMultidata().then(res=>{
