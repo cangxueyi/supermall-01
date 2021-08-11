@@ -93,6 +93,7 @@
 	import DetailNavBar from './childComp/detailNavBar.vue'
 	import DetailSwiper from './childComp/detailSwiper.vue'
 	import {getDetail} from 'network/detail.js'
+	import store from 'store/index.js'
 	
 	import DetailImageInfo from './childComp/detailImageInfo.vue'
 	import DetailParamsInfo from './childComp/detailParamsInfo.vue'
@@ -150,6 +151,9 @@
 			detailImageLoad(){
 				// 最好做一个防抖动操作，避免多次发射请求
 				this.$refs.scroll.refresh()
+			},
+			addToCart(){
+				this.$store.commit('addCart',product)
 			}
 		}
 	}
