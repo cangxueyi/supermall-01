@@ -7,7 +7,6 @@
 		
 		<a>我是张三</a>
 		<button>我是按钮</button>
-		<button>点点</button>
 	</div>
 </template>
 
